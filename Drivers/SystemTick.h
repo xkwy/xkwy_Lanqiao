@@ -2,25 +2,29 @@
 /******************************************************
  ***                                                 **
  ******************************************************
- * @file      main.c
+ * @file      SystemTick.h
  * @author    xkwy
  * @version   V1.00
- * @date      2016-1-21
+ * @date      2015-12-19
  ******************************************************
  * @attention
  *
- * Copyright (C) 2016 xkwy LIMITED
+ * Copyright (C) 2015 xkwy LIMITED
  * All rights reserved.
  ******************************************************/
 
+# ifndef __SYSTEM_TICK_H_
+# define __SYSTEM_TICK_H_
 
-int main(void)
+extern void SystemTick_Run(void);
+
+
+static __inline uint32_t GetTickCount(void)
 {
-    ;
-    
-    while (1)
-    {
-        ;
-    }
+    extern volatile uint32_t SysTickCount;
+
+    return SysTickCount;
 }
 
+
+# endif

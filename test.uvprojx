@@ -373,7 +373,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\Apps;.\Drivers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -421,10 +421,27 @@
               <FileType>1</FileType>
               <FilePath>.\Apps\main.c</FilePath>
             </File>
+            <File>
+              <FileName>TaskMgr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Apps\TaskMgr.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>SystemTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\SystemTick.c</FilePath>
+            </File>
+            <File>
+              <FileName>SoftwareDelay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\SoftwareDelay.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
