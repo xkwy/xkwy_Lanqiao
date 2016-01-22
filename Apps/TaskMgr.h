@@ -5,11 +5,11 @@
  * @file      TaskMgr.h
  * @author    xkwy
  * @version   V1.00
- * @date      2015-12-19
+ * @date      2016-1-22
  ******************************************************
  * @attention
  *
- * Copyright (C) 2015 xkwy LIMITED
+ * Copyright (C) 2016 xkwy LIMITED
  * All rights reserved.
  ******************************************************/
 
