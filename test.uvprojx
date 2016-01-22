@@ -451,6 +451,11 @@
               <FileType>1</FileType>
               <FilePath>.\Drivers\Keys.c</FilePath>
             </File>
+            <File>
+              <FileName>BEEP.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BEEP.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

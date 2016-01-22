@@ -23,6 +23,7 @@
 # include "SoftwareDelay.h"
 
 # include "keys.h"
+# include "beep.h"
 
 static Task_t TK_Main[8];
 
@@ -30,6 +31,7 @@ static Task_t TK_Main[8];
 void TK_test(void)
 {
     printf("#");
+    BEEP_Set(150);
 }
 
 int main(void)
@@ -41,9 +43,10 @@ int main(void)
     USART2_init(38400);
     
     KEY_init();
+    BEEP_init();
     
     Task_init(&TK_Main[0], KEY_Scan, 2, 0);
-    Task_init(&TK_Main[1], TK_NOP, 1000, 0);
+    Task_init(&TK_Main[1], BEEP_Scan, 1, 0);
     Task_init(&TK_Main[2], TK_NOP, 1000, 0);
     Task_init(&TK_Main[3], TK_NOP, 1000, 0);
     Task_init(&TK_Main[4], TK_NOP, 1000, 0);
@@ -75,6 +78,7 @@ extern void KEY_EventUp(uint32_t i)
 
 extern void KEY_EventDown(uint32_t i)
 {
+    BEEP_Set(50);
     printf(" the KEY of 'B%d' Down!!\r\n", i+1);
 }
 
