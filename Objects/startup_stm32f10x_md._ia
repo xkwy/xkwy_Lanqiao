@@ -1,0 +1,7 @@
+--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"
+-I "D:\5 资源伍区\【蓝桥杯】所有相关\xkwy_LanQiao\RTE"
+-I "D:\5 资源伍区\【蓝桥杯】所有相关\xkwy_LanQiao\RTE\Device\STM32F103RB"
+-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include
+--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"
+--list .\listings\startup_stm32f10x_md.lst --xref -o .\objects\startup_stm32f10x_md.o --depend .\objects\startup_stm32f10x_md.d "RTE\Device\STM32F103RB\startup_stm32f10x_md.s"

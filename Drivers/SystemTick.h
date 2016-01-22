@@ -16,6 +16,8 @@
 # ifndef __SYSTEM_TICK_H_
 # define __SYSTEM_TICK_H_
 
+# include "stdint.h"
+
 extern void SystemTick_Run(void);
 
 
