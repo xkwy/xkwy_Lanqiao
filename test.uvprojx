@@ -446,6 +446,11 @@
               <FileType>1</FileType>
               <FilePath>.\Drivers\USART2.c</FilePath>
             </File>
+            <File>
+              <FileName>Keys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\Keys.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

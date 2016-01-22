@@ -2,7 +2,7 @@
 /******************************************************
  ***                                                 **
  ******************************************************
- * @file      usart2.h
+ * @file      keys.h
  * @author    xkwy
  * @version   V1.00
  * @date      2016-1-22
@@ -13,9 +13,8 @@
  * All rights reserved.
  ******************************************************/
 
-
-# ifndef __STM32_USART2_H_
-# define __STM32_USART2_H_
+# ifndef __KEYS_H_
+# define __KEYS_H_
 
 # include "stdint.h"
 
@@ -27,13 +26,11 @@
  * @return Value of the targeted bit in the bit band region.
  */
 #define BITBAND_REG(Reg,Bit) (*((uint32_t volatile*)(0x42000000u + (32u*((uint32_t)&(Reg) - (uint32_t)0x40000000u)) + (4u*((uint32_t)(Bit))))))
+#define pBITBAND_REG(Reg,Bit) ((uint32_t volatile*)(0x42000000u + (32u*((uint32_t)&(Reg) - (uint32_t)0x40000000u)) + (4u*((uint32_t)(Bit)))))
 
-extern void USART2_init(uint32_t dwBaudRate);
-extern void USART2_SendByte(uint8_t by);
-extern void USART2_SendBytes(uint8_t *pby, uint32_t n);
-extern void USART2_SendHex(uint8_t *pby, uint32_t n);
-extern void USART2_SendString(char *s);
-
+extern void KEY_Scan(void);
+extern void KEY_init(void);
+extern uint32_t KEY_GetStatus(uint32_t index);
+extern void Start_Check(void);
 
 # endif
-
