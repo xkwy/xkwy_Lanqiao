@@ -24,6 +24,8 @@
 
 # include "keys.h"
 # include "beep.h"
+# include "led.h"
+
 
 static Task_t TK_Main[8];
 
@@ -32,6 +34,7 @@ void TK_test(void)
 {
     printf("#");
     BEEP_Set(150);
+    LED_TOG(LED_2);
 }
 
 int main(void)
@@ -44,6 +47,7 @@ int main(void)
     
     KEY_init();
     BEEP_init();
+    LED_init();
     
     Task_init(&TK_Main[0], KEY_Scan, 2, 0);
     Task_init(&TK_Main[1], BEEP_Scan, 1, 0);
@@ -54,6 +58,7 @@ int main(void)
     Task_init(&TK_Main[6], TK_NOP, 1000, 0);
     Task_init(&TK_Main[7], TK_test, 3000, 0);
     
+    LED_ON(LED_0);
     Task_Trig(&TK_Main[7]);
     
     while (1)
@@ -73,11 +78,13 @@ int main(void)
 
 extern void KEY_EventUp(uint32_t i)
 {
+    LED_OFF((LED_t)(16<<i));
     printf(" the KEY of 'B%d' UP!!\r\n", i+1);
 }
 
 extern void KEY_EventDown(uint32_t i)
 {
+    LED_ON((LED_t)(16<<i));
     BEEP_Set(50);
     printf(" the KEY of 'B%d' Down!!\r\n", i+1);
 }
