@@ -38,11 +38,11 @@ extern void LED_init(void)
 
 static void LED_Update(void)
 {
-    BITBAND_REG(GPIOD->ODR, 2) = 0;
+    BITBAND_REG(GPIOD->ODR, 2) = 1;
     
     GPIOC->ODR = ((led_status<<8)&0x0000FF00)|(GPIOC->ODR&(~0x0000FF00));
     
-    BITBAND_REG(GPIOD->ODR, 2) = 1;
+    BITBAND_REG(GPIOD->ODR, 2) = 0;
 }
 
 extern void LED_ON(LED_t led)

@@ -26,20 +26,39 @@
 # include "beep.h"
 # include "led.h"
 # include "adc.h"
+# include "lcd.h"
 
 static Task_t TK_Main[8];
 
+static char s_tmp[40];
 
 void TK_test(void)
 {
     LED_TOG(LED_2);
     BEEP_Set(150);
     
-    
     printf("Res:%6.1lf %%    ", (1000-ADC_GetRes())/10.0);
     printf("Temp: %6.2lf *C   ", ADC_GetTemp()/1000.0);
     
     printf("\r\n");
+}
+
+void TK_Timer(void)
+{
+	LCD_SetTextColor(Blue2);
+    sprintf(s_tmp, "  Time: %08.1lf s  ", GetTickCount()/1000.0);
+	LCD_DisplayStringLine(Line7,(u8*)s_tmp);
+	LCD_SetTextColor(Black);
+}
+
+void TK_Info(void)
+{
+	LCD_SetTextColor(Black);
+    sprintf(s_tmp, " $ Res: %.1lf%%  ", ADC_GetRes()/10.0);
+	LCD_DisplayStringLine(Line2,(u8*)s_tmp);
+    sprintf(s_tmp, " $ Temp: %.2lfC  ", ADC_GetTemp()/1000.0);
+	LCD_DisplayStringLine(Line3,(u8*)s_tmp);
+	LCD_SetTextColor(Black);
 }
 
 int main(void)
@@ -54,16 +73,36 @@ int main(void)
     BEEP_init();
     LED_init();
     ADC_init();
+    STM3210B_LCD_Init();
+    
+	LCD_SetTextColor(Black);
+	LCD_SetBackColor(White);
+	LCD_Clear(White);
+    
+	
+	LCD_SetTextColor(Red);
+	LCD_DisplayStringLine(Line0," -- Hello, xkwy. -- ");
+	LCD_DisplayStringLine(Line1,"                    ");
+	LCD_DisplayStringLine(Line2,"                    ");
+	LCD_DisplayStringLine(Line3,"                    ");
+	LCD_DisplayStringLine(Line4,"                    ");
+	LCD_DisplayStringLine(Line5,"                    ");
+	LCD_DisplayStringLine(Line6,"                    ");
+	LCD_DisplayStringLine(Line7,"                    ");
+	LCD_SetTextColor(Cyan);
+	LCD_DisplayStringLine(Line8," * Compiled Time *  ");
+	LCD_DisplayStringLine(Line9,__TIME__ " " __DATE__);
+   
     
     
     Task_init(&TK_Main[0], KEY_Scan, 2, 0);
     Task_init(&TK_Main[1], BEEP_Scan, 1, 0);
-    Task_init(&TK_Main[2], TK_NOP, 1000, 0);
-    Task_init(&TK_Main[3], TK_NOP, 1000, 0);
+    Task_init(&TK_Main[2], TK_Timer, 100, 0);
+    Task_init(&TK_Main[3], TK_Info, 200, 0);
     Task_init(&TK_Main[4], TK_NOP, 1000, 0);
     Task_init(&TK_Main[5], TK_NOP, 1000, 0);
     Task_init(&TK_Main[6], TK_NOP, 1000, 0);
-    Task_init(&TK_Main[7], TK_test, 3000, 0);
+    Task_init(&TK_Main[7], TK_test, 6000, 0);
     
     LED_ON(LED_0);
     Task_Trig(&TK_Main[7]);
@@ -86,14 +125,24 @@ int main(void)
 extern void KEY_EventUp(uint32_t i)
 {
     LED_OFF((LED_t)(16<<i));
-    printf(" the KEY of 'B%d' UP!!\r\n", i+1);
+    printf(" the KEY of 'B%d' Up!!\r\n", i+1);
+    
+	LCD_SetTextColor(Yellow);
+    sprintf(s_tmp, " + KEY_B%d Up!   ", i+1);
+	LCD_DisplayStringLine(Line5,(u8*)s_tmp);
+	LCD_SetTextColor(Black);
 }
 
 extern void KEY_EventDown(uint32_t i)
 {
-    LED_ON((LED_t)(16<<i));
     BEEP_Set(50);
+    LED_ON((LED_t)(16<<i));
     printf(" the KEY of 'B%d' Down!!\r\n", i+1);
+    
+	LCD_SetTextColor(Magenta);
+    sprintf(s_tmp, " + KEY_B%d Down! ", i+1);
+	LCD_DisplayStringLine(Line5,(u8*)s_tmp);
+	LCD_SetTextColor(Black);
 }
 
 /* End Line */
