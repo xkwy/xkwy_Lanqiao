@@ -168,6 +168,11 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+          <Name></Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>coocox-agdi</Key>
           <Name>setcontext --link-name="Colink" --link-clk=300000 --debug-port=1 --reset=3 --ifrun=1 --erase=2 --cache-code=0 --ifverify=0 --con-opt=0</Name>
         </SetRegEntry>
@@ -201,18 +206,258 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>28</LineNumber>
+          <LineNumber>24</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134218924</Address>
+          <Address>134218220</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Apps\main.c</Filename>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\test\Apps/main.c\28</Expression>
+          <Expression>\\test\Drivers/ADC.c\24</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>27</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218232</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\27</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>30</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218244</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\30</Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
+          <LineNumber>31</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218256</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\31</Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>34</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218266</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\34</Expression>
+        </Bp>
+        <Bp>
+          <Number>5</Number>
+          <Type>0</Type>
+          <LineNumber>37</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218276</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\37</Expression>
+        </Bp>
+        <Bp>
+          <Number>6</Number>
+          <Type>0</Type>
+          <LineNumber>38</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218286</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\38</Expression>
+        </Bp>
+        <Bp>
+          <Number>7</Number>
+          <Type>0</Type>
+          <LineNumber>41</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218296</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\41</Expression>
+        </Bp>
+        <Bp>
+          <Number>8</Number>
+          <Type>0</Type>
+          <LineNumber>44</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218304</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\44</Expression>
+        </Bp>
+        <Bp>
+          <Number>9</Number>
+          <Type>0</Type>
+          <LineNumber>50</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218310</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\50</Expression>
+        </Bp>
+        <Bp>
+          <Number>10</Number>
+          <Type>0</Type>
+          <LineNumber>51</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218320</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\51</Expression>
+        </Bp>
+        <Bp>
+          <Number>11</Number>
+          <Type>0</Type>
+          <LineNumber>54</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218336</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\54</Expression>
+        </Bp>
+        <Bp>
+          <Number>12</Number>
+          <Type>0</Type>
+          <LineNumber>55</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218352</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\55</Expression>
+        </Bp>
+        <Bp>
+          <Number>13</Number>
+          <Type>0</Type>
+          <LineNumber>58</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218368</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\58</Expression>
+        </Bp>
+        <Bp>
+          <Number>14</Number>
+          <Type>0</Type>
+          <LineNumber>62</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218376</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\62</Expression>
+        </Bp>
+        <Bp>
+          <Number>15</Number>
+          <Type>0</Type>
+          <LineNumber>66</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134218384</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\5 璧勬簮浼嶅尯\銆愯摑妗ユ澂銆戞墍鏈夌浉鍏?xkwy_LanQiao\Drivers\ADC.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test\Drivers/ADC.c\66</Expression>
         </Bp>
       </Breakpoint>
       <Tracepoint>
@@ -357,6 +602,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\Drivers\LED.c</PathWithFileName>
       <FilenameWithoutPath>LED.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>9</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\Drivers\ADC.c</PathWithFileName>
+      <FilenameWithoutPath>ADC.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

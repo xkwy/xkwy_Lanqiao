@@ -1,6 +1,6 @@
 
 /******************************************************
- ***                                                 **
+ ***  the 7th 'LanQiao' Cup Embedded Training Board  **
  ******************************************************
  * @file      led.c
  * @author    xkwy
@@ -65,6 +65,5 @@ extern void LED_TOG(LED_t led)
     
     LED_Update();
 }
-
 
 /* End Line */

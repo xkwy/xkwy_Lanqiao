@@ -1,6 +1,6 @@
 
 /******************************************************
- ***                                                 **
+ ***  the 7th 'LanQiao' Cup Embedded Training Board  **
  ******************************************************
  * @file      main.c
  * @author    xkwy
@@ -25,16 +25,21 @@
 # include "keys.h"
 # include "beep.h"
 # include "led.h"
-
+# include "adc.h"
 
 static Task_t TK_Main[8];
 
 
 void TK_test(void)
 {
-    printf("#");
-    BEEP_Set(150);
     LED_TOG(LED_2);
+    BEEP_Set(150);
+    
+    
+    printf("Res:%6.1lf %%    ", (1000-ADC_GetRes())/10.0);
+    printf("Temp: %6.2lf *C   ", ADC_GetTemp()/1000.0);
+    
+    printf("\r\n");
 }
 
 int main(void)
@@ -48,6 +53,8 @@ int main(void)
     KEY_init();
     BEEP_init();
     LED_init();
+    ADC_init();
+    
     
     Task_init(&TK_Main[0], KEY_Scan, 2, 0);
     Task_init(&TK_Main[1], BEEP_Scan, 1, 0);

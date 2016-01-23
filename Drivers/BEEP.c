@@ -1,6 +1,6 @@
 
 /******************************************************
- ***                                                 **
+ ***  the 7th 'LanQiao' Cup Embedded Training Board  **
  ******************************************************
  * @file      beep.c
  * @author    xkwy
@@ -68,8 +68,5 @@ extern void BEEP_Stop(void)
     beep_remain_ms = 0;
     BITBAND_REG(GPIOB->ODR, 4) = 1;
 }
-
-
-
 
 /* End Line */

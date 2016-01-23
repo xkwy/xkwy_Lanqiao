@@ -2,10 +2,10 @@
 /******************************************************
  ***  the 7th 'LanQiao' Cup Embedded Training Board  **
  ******************************************************
- * @file      SoftwareDelay.h
+ * @file      adc.h
  * @author    xkwy
  * @version   V1.00
- * @date      2016-1-22
+ * @date      2016-1-23
  ******************************************************
  * @attention
  *
@@ -13,13 +13,17 @@
  * All rights reserved.
  ******************************************************/
 
-# ifndef __SOFTWARE_DELAY_H__
-# define __SOFTWARE_DELAY_H__
+# ifndef __ADC_H_
+# define __ADC_H_
 
 # include "stdint.h"
 
-extern void delay_init(void);
-extern void delay_us(const uint32_t);
-extern void delay_ms(const uint32_t);
+
+extern void ADC_init(void);
+extern void ADC_GetVal(uint32_t *dt);
+
+extern uint32_t ADC_GetRes(void);
+extern uint32_t ADC_GetTemp(void);
+
 
 # endif

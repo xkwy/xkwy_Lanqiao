@@ -1,6 +1,6 @@
 
 /******************************************************
- ***                                                 **
+ ***  the 7th 'LanQiao' Cup Embedded Training Board  **
  ******************************************************
  * @file      SoftwareDelay.c
  * @author    xkwy
