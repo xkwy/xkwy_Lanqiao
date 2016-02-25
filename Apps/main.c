@@ -27,15 +27,21 @@
 # include "led.h"
 # include "adc.h"
 # include "lcd.h"
+# include "at24c02.h"
 
 static Task_t TK_Main[8];
 
 static char s_tmp[40];
 
-void TK_test(void)
+static uint32_t TimeBase = 0;
+static uint32_t TimeTotal = 0;
+
+void TK_test(void)  /* 6s */
 {
     LED_TOG(LED_2);
     BEEP_Set(150);
+    
+    AT24C02_Write(&TimeTotal, sizeof(TimeTotal), 0x00);
     
     printf("Res:%6.1lf %%    ", (1000-ADC_GetRes())/10.0);
     printf("Temp: %6.2lf *C   ", ADC_GetTemp()/1000.0);
@@ -43,18 +49,19 @@ void TK_test(void)
     printf("\r\n");
 }
 
-void TK_Timer(void)
+void TK_Timer(void) /* 100ms */
 {
 	LCD_SetTextColor(Blue2);
-    sprintf(s_tmp, "  Time: %08.1lf s  ", GetTickCount()/1000.0);
+    TimeTotal = TimeBase + GetTickCount()/100;
+    sprintf(s_tmp, "  Time: %08.1lf s  ", TimeTotal/10.0);
 	LCD_DisplayStringLine(Line7,(u8*)s_tmp);
 	LCD_SetTextColor(Black);
 }
 
-void TK_Info(void)
+void TK_Info(void)  /* 200ms */
 {
 	LCD_SetTextColor(Black);
-    sprintf(s_tmp, " $ Res: %.1lf%%  ", ADC_GetRes()/10.0);
+    sprintf(s_tmp, " $ Res: %.1lf%%  ", (1000-ADC_GetRes())/10.0);
 	LCD_DisplayStringLine(Line2,(u8*)s_tmp);
     sprintf(s_tmp, " $ Temp: %.2lfC  ", ADC_GetTemp()/1000.0);
 	LCD_DisplayStringLine(Line3,(u8*)s_tmp);
@@ -74,26 +81,20 @@ int main(void)
     LED_init();
     ADC_init();
     STM3210B_LCD_Init();
+    AT24C02_init();
+    
+    AT24C02_Read(&TimeBase, sizeof(TimeBase), 0x00);
+    TimeTotal = TimeBase;
     
 	LCD_SetTextColor(Black);
 	LCD_SetBackColor(White);
 	LCD_Clear(White);
     
-	
 	LCD_SetTextColor(Red);
 	LCD_DisplayStringLine(Line0," -- Hello, xkwy. -- ");
-	LCD_DisplayStringLine(Line1,"                    ");
-	LCD_DisplayStringLine(Line2,"                    ");
-	LCD_DisplayStringLine(Line3,"                    ");
-	LCD_DisplayStringLine(Line4,"                    ");
-	LCD_DisplayStringLine(Line5,"                    ");
-	LCD_DisplayStringLine(Line6,"                    ");
-	LCD_DisplayStringLine(Line7,"                    ");
 	LCD_SetTextColor(Cyan);
 	LCD_DisplayStringLine(Line8," * Compiled Time *  ");
 	LCD_DisplayStringLine(Line9,__TIME__ " " __DATE__);
-   
-    
     
     Task_init(&TK_Main[0], KEY_Scan, 2, 0);
     Task_init(&TK_Main[1], BEEP_Scan, 1, 0);
