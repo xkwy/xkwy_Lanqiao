@@ -162,6 +162,8 @@
 /* Exported functions ------------------------------------------------------- */
 /*----- High layer function -----*/
 void STM3210B_LCD_Init(void);
+vu16 LCD_GetTextColor(void);
+vu16 LCD_GetBackColor(void);
 void LCD_SetTextColor(vu16 Color);
 void LCD_SetBackColor(vu16 Color);
 void LCD_ClearLine(u8 Line);

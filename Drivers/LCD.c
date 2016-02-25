@@ -171,6 +171,10 @@ void LCD_SetTextColor(vu16 Color)
 {
 	TextColor = Color;
 }
+vu16 LCD_GetTextColor(void)
+{
+	return TextColor;
+}
 /*******************************************************************************
 * Function Name  : LCD_SetBackColor
 * Description    : Sets the Background color.
@@ -182,6 +186,10 @@ void LCD_SetTextColor(vu16 Color)
 void LCD_SetBackColor(vu16 Color)
 {
 	BackColor = Color;
+}
+vu16 LCD_GetBackColor(void)
+{
+	return BackColor;
 }
 /*******************************************************************************
 * Function Name  : LCD_ClearLine

@@ -28,6 +28,7 @@
 # include "adc.h"
 # include "lcd.h"
 # include "at24c02.h"
+# include "rtc.h"
 
 static Task_t TK_Main[8];
 
@@ -35,6 +36,17 @@ static char s_tmp[40];
 
 static uint32_t TimeBase = 0;
 static uint32_t TimeTotal = 0;
+
+extern void RTC_Update(uint32_t h, uint32_t m, uint32_t s)
+{
+    char str[40];
+    uint16_t tmp = LCD_GetTextColor();
+    
+    LCD_SetTextColor(Red);
+    sprintf(str, " time = %02d:%02d:%02d", h, m, s);
+    LCD_DisplayStringLine(Line6,(u8*)str);
+    LCD_SetTextColor(tmp);
+}
 
 void TK_test(void)  /* 6s */
 {
@@ -53,7 +65,7 @@ void TK_Timer(void) /* 100ms */
 {
 	LCD_SetTextColor(Blue2);
     TimeTotal = TimeBase + GetTickCount()/100;
-    sprintf(s_tmp, "  Time: %08.1lf s  ", TimeTotal/10.0);
+    sprintf(s_tmp, "  Cnt: %08.1lf s  ", TimeTotal/10.0);
 	LCD_DisplayStringLine(Line7,(u8*)s_tmp);
 	LCD_SetTextColor(Black);
 }
@@ -82,6 +94,23 @@ int main(void)
     ADC_init();
     STM3210B_LCD_Init();
     AT24C02_init();
+    RTC_init(23,59,55);
+    
+    {
+        uint32_t tmp_key;
+        AT24C02_Read(&tmp_key, sizeof(tmp_key), 0x10);
+        if (tmp_key != 0xAA5555AA)
+        {
+            delay_ms(10);
+            tmp_key = 0xAA5555AA;
+            AT24C02_Write(&tmp_key, sizeof(tmp_key), 0x10);
+            delay_ms(10);
+            
+            TimeBase = 0;
+            AT24C02_Write(&TimeBase, sizeof(TimeBase), 0x00);
+            delay_ms(10);
+        }
+    }
     
     AT24C02_Read(&TimeBase, sizeof(TimeBase), 0x00);
     TimeTotal = TimeBase;
@@ -92,6 +121,7 @@ int main(void)
     
 	LCD_SetTextColor(Red);
 	LCD_DisplayStringLine(Line0," -- Hello, xkwy. -- ");
+    LCD_DisplayStringLine(Line6, " time = 23:59:55");
 	LCD_SetTextColor(Cyan);
 	LCD_DisplayStringLine(Line8," * Compiled Time *  ");
 	LCD_DisplayStringLine(Line9,__TIME__ " " __DATE__);
@@ -128,9 +158,9 @@ extern void KEY_EventUp(uint32_t i)
     LED_OFF((LED_t)(16<<i));
     printf(" the KEY of 'B%d' Up!!\r\n", i+1);
     
-	LCD_SetTextColor(Yellow);
+	LCD_SetTextColor(Grey);
     sprintf(s_tmp, " + KEY_B%d Up!   ", i+1);
-	LCD_DisplayStringLine(Line5,(u8*)s_tmp);
+	LCD_DisplayStringLine(Line4,(u8*)s_tmp);
 	LCD_SetTextColor(Black);
 }
 
@@ -142,7 +172,7 @@ extern void KEY_EventDown(uint32_t i)
     
 	LCD_SetTextColor(Magenta);
     sprintf(s_tmp, " + KEY_B%d Down! ", i+1);
-	LCD_DisplayStringLine(Line5,(u8*)s_tmp);
+	LCD_DisplayStringLine(Line4,(u8*)s_tmp);
 	LCD_SetTextColor(Black);
 }
 

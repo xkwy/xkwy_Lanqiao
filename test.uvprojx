@@ -486,6 +486,11 @@
               <FileType>1</FileType>
               <FilePath>.\Drivers\AT24C02.c</FilePath>
             </File>
+            <File>
+              <FileName>RTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\RTC.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
